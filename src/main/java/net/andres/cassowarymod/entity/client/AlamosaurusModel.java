@@ -1,8 +1,6 @@
 package net.andres.cassowarymod.entity.client;
 
-import net.andres.cassowarymod.CassowaryMod;
 import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
-import net.andres.cassowarymod.entity.custom.CassowaryEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import software.bernie.geckolib.constant.DataTickets;
@@ -16,9 +14,9 @@ public class AlamosaurusModel extends GeoModel<AlamosaurusEntity> {
     @Override
     public ResourceLocation getModelResource(AlamosaurusEntity alamosaurusEntity) {
         if(alamosaurusEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "geo/alamo_baby_dt.json");
+            return new ResourceLocation("cassowarymod", "geo/alamo_baby_dt.geo.json");
         }
-        return new ResourceLocation("cassowarymod", "geo/alamosaurus.geo.json");
+        return new ResourceLocation("cassowarymod", "geo/alamo_dt.geo.json");
     }
 
     @Override
@@ -34,11 +32,11 @@ public class AlamosaurusModel extends GeoModel<AlamosaurusEntity> {
         if(alamosaurusEntity.isBaby()){
             return new ResourceLocation("cassowarymod", "animations/alamo_baby_dt.animation.json");
         }
-        return new ResourceLocation("cassowarymod", "animations/alamosaurus.animation.json");
+        return new ResourceLocation("cassowarymod", "animations/alamo_dt.animation.json");
     }
 
     //@Override
-    public void setCustomAnimations(CassowaryEntity animatable, long instanceId, AnimationState<CassowaryEntity> animationState) {
+    public void setCustomAnimations(AlamosaurusEntity animatable, long instanceId, AnimationState<AlamosaurusEntity> animationState) {
         CoreGeoBone head = getAnimationProcessor().getBone("Head");
         if(head != null){
             EntityModelData entityData = animationState.getData(DataTickets.ENTITY_MODEL_DATA);

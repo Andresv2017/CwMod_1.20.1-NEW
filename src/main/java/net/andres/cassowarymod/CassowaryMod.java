@@ -38,7 +38,8 @@ public class CassowaryMod
 
         modEventBus.addListener(this::addCreative);
 
-        ModEntities.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
+        ModEntities.init();
 
     }
 
