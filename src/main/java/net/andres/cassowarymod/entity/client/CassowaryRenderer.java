@@ -31,5 +31,6 @@ public class CassowaryRenderer extends GeoEntityRenderer<CassowaryEntity> {
         super.render(entity, entityYaw, partialTick, poseStack, bufferSource, packedLight);
     }
 
+
 }
 

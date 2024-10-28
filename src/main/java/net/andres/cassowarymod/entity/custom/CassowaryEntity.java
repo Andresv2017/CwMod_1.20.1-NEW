@@ -188,6 +188,12 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
 
     //Guardar Estado de Tameado en el juego, para cuando vuelvas que el animal siga tameado
 
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+    }
+
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
