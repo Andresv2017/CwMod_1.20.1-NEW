@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.*;
 import net.minecraft.world.InteractionHand;
@@ -32,6 +33,7 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.Random;
+
 
 public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
@@ -239,6 +241,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
         return ModEntities.ALAMOSAURUS.get().create(serverLevel);
     }
+
     //Con que se pueden reproducir
     @Override
     public boolean isFood(ItemStack pStack) {return pStack.is(Items.MELON_SLICE); }

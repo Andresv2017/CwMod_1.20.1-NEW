@@ -39,12 +39,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<AlamosaurusEntity>> ALAMOSAURUS = ENTITY_TYPES.register("alamosaurus",
             () -> EntityType.Builder.of(AlamosaurusEntity::new, MobCategory.CREATURE)
-                    .sized(3.5f,3.75f)
+                    .sized(2.5f,5.75f)
                     .build(String.valueOf(new ResourceLocation(CassowaryMod.MODID, "alamosaurus"))));
-
-
-    public static void register(IEventBus eventBus){
-            ENTITY_TYPES.register(eventBus);
-        }
 
 }
