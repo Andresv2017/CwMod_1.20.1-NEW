@@ -5,24 +5,22 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.*;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.scores.Team;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
@@ -30,6 +28,7 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.Random;
@@ -39,6 +38,15 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     private static final EntityDataAccessor<Boolean> SITTING = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.BOOLEAN);
+
+    public static AttributeSupplier setAttributes(){
+        return TamableAnimal.createMobAttributes()
+                .add(Attributes.MAX_HEALTH, 16D)
+                .add(Attributes.ATTACK_DAMAGE, 3.0f)
+                .add(Attributes.ATTACK_SPEED, 1.0f)
+                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .build();
+    }
 
     public AlamosaurusEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -57,14 +65,11 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
     }
 
-    public static AttributeSupplier setAttributes(){
-        return TamableAnimal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 16D)
-                .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2f)
-                .build();
-    }
+    public static final RawAnimation DIE = RawAnimation.begin().thenPlay("animation.alamo_dt.sleeping");
+    public static final RawAnimation RUN = RawAnimation.begin().thenLoop("animation.alamo_dt.running");
+    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.alamo_dt.walking");
+    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.alamo_dt.default");
+    public static final RawAnimation SIT = RawAnimation.begin().thenLoop("animation.alamo_dt.sitting");
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
@@ -73,12 +78,10 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         controllers.add(genericDeathController(this));
     }
 
-    public static final RawAnimation DIE = RawAnimation.begin().thenPlay("animation.alamo_dt.sleeping");
 
     public static <T extends LivingEntity & GeoAnimatable> AnimationController<T> genericDeathController(T animatable) {
         return new AnimationController<>(animatable, "Death", 0, state -> state.getAnimatable().isDeadOrDying() ? state.setAndContinue(DIE) : PlayState.STOP);
     }
-
 
     public final Random random = new Random();
 
@@ -99,10 +102,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         return PlayState.CONTINUE;
     }
 
-    public static final RawAnimation RUN = RawAnimation.begin().thenLoop("animation.alamo_dt.running");
-    public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.alamo_dt.walking");
-    public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.alamo_dt.default");
-    public static final RawAnimation SIT = RawAnimation.begin().thenLoop("animation.alamo_dt.sitting");
+
 
 
     public PlayState movementPredicate(AnimationState event) {
@@ -187,6 +187,10 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         return super.doHurtTarget(pEntity);
     }*/
 
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+    }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
@@ -233,15 +237,15 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         }
     }
 
-    @Nullable
+    //Bebes
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
+    public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
         return ModEntities.ALAMOSAURUS.get().create(serverLevel);
     }
-
     //Con que se pueden reproducir
     @Override
-    public boolean isFood(ItemStack pStack) {return pStack.getItem() == Items.MELON_SLICE.asItem(); }
+    public boolean isFood(ItemStack pStack) {return pStack.is(Items.MELON_SLICE); }
+
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {

@@ -74,13 +74,9 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
 
 
     private static final RawAnimation CS_SPRINT = RawAnimation.begin().thenLoop("walk");
-
     private static final RawAnimation CS_WALK = RawAnimation.begin().thenLoop("walk");
-
     private static final RawAnimation CS_SWIM = RawAnimation.begin().thenLoop("walk");
-
     private static final RawAnimation CS_IDLE = RawAnimation.begin().thenLoop("idle");
-
     private static final RawAnimation CS_SIT = RawAnimation.begin().thenPlayAndHold("sit");
 
 
@@ -241,11 +237,6 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
     }
     //Fin de Metodos Para Tamear
 
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
-
     //Bebes
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
@@ -256,6 +247,11 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
     @Override
     public boolean isFood(ItemStack pStack) {
         return pStack.is(Items.MELON_SLICE);
+    }
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
     }
 }
 

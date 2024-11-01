@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.alamo_baby_dt.look_at_target": {
+		"animation.alamo_dt.look_at_target": {
 			"loop": true,
 			"bones": {
 				"Head": {
@@ -12,7 +12,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.default": {
+		"animation.alamo_dt.default": {
 			"loop": true,
 			"bones": {
 				"Body2": {
@@ -157,7 +157,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.walking": {
+		"animation.alamo_dt.walking": {
 			"loop": true,
 			"animation_length": 4,
 			"bones": {
@@ -915,7 +915,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.running": {
+		"animation.alamo_dt.running": {
 			"loop": true,
 			"animation_length": 1.2083,
 			"bones": {
@@ -1979,7 +1979,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.chewing": {
+		"animation.alamo_dt.chewing": {
 			"animation_length": 6,
 			"bones": {
 				"Body2": {
@@ -2294,7 +2294,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.sitting": {
+		"animation.alamo_dt.sitting": {
 			"loop": true,
 			"bones": {
 				"Leg1": {
@@ -2513,7 +2513,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.sleeping": {
+		"animation.alamo_dt.sleeping": {
 			"loop": true,
 			"bones": {
 				"Leg1": {
@@ -2750,7 +2750,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.look_around": {
+		"animation.alamo_dt.look_around": {
 			"animation_length": 9.5,
 			"bones": {
 				"Body2": {
@@ -2995,7 +2995,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.shaking": {
+		"animation.alamo_dt.shaking": {
 			"animation_length": 2.5,
 			"bones": {
 				"Body1": {
@@ -3600,7 +3600,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.roaring": {
+		"animation.alamo_dt.roaring": {
 			"animation_length": 5,
 			"bones": {
 				"BipedAlamosaurus": {
@@ -4020,7 +4020,7 @@
 				}
 			}
 		},
-		"animation.alamo_baby_dt.standing_body": {
+		"animation.alamo_dt.standing_body": {
 			"animation_length": 4.5,
 			"bones": {
 				"Body2": {
