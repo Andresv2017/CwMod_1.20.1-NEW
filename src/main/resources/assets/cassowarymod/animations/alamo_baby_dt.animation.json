@@ -899,20 +899,6 @@
 						}
 					}
 				}
-			},
-			"sound_effects": {
-				"0.0": {
-					"effect": "step"
-				},
-				"1.5": {
-					"effect": "step"
-				},
-				"2.0": {
-					"effect": "step"
-				},
-				"3.5": {
-					"effect": "step"
-				}
 			}
 		},
 		"animation.alamo_dt.running": {
@@ -1969,14 +1955,6 @@
 						"easing": "linear"
 					}
 				}
-			},
-			"sound_effects": {
-				"0.0833": {
-					"effect": "step"
-				},
-				"0.9167": {
-					"effect": "step"
-				}
 			}
 		},
 		"animation.alamo_dt.chewing": {
@@ -2277,20 +2255,6 @@
 							"easing": "linear"
 						}
 					}
-				}
-			},
-			"sound_effects": {
-				"1.5": {
-					"effect": "chew"
-				},
-				"2.5": {
-					"effect": "chew"
-				},
-				"4.0": {
-					"effect": "chew"
-				},
-				"5.0": {
-					"effect": "chew"
 				}
 			}
 		},
@@ -4013,11 +3977,6 @@
 						}
 					}
 				}
-			},
-			"sound_effects": {
-				"0.6667": {
-					"effect": "roar"
-				}
 			}
 		},
 		"animation.alamo_dt.standing_body": {
@@ -5630,14 +5589,6 @@
 							"easing": "linear"
 						}
 					}
-				}
-			},
-			"sound_effects": {
-				"0.5": {
-					"effect": "roar"
-				},
-				"3.0": {
-					"effect": "stomp"
 				}
 			}
 		}

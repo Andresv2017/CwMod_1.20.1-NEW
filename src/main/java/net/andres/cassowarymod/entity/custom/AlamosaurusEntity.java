@@ -102,10 +102,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         return PlayState.CONTINUE;
     }
 
-
-
-
-    public PlayState movementPredicate(AnimationState event) {
+    protected PlayState movementPredicate(AnimationState event) {
         if(isSitting() && isTame()) {
             event.setAnimation(SIT);
             event.getController().setAnimationSpeed(16D);
@@ -127,7 +124,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         }
         if (isInWater()) {
             //System.out.println("Ejecutando animación: SWIM");
-            event.setAndContinue(RUN);
+            event.setAndContinue(WALK);
             event.getController().setAnimationSpeed(1.0D);
             return PlayState.CONTINUE;
         }
