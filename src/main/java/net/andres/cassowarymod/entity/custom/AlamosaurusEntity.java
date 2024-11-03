@@ -40,6 +40,14 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
     private static final EntityDataAccessor<Boolean> SITTING = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.BOOLEAN);
 
+    private static final EntityDataAccessor<Integer> TEXTUREID = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.INT);
+    public void setTextureId(int i){
+        this.getEntityData().set(TEXTUREID, i);
+    }
+    public int getTextureID(){
+        return this.getEntityData().get(TEXTUREID);
+    }
+
     public static AttributeSupplier setAttributes(){
         return TamableAnimal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 16D)
@@ -52,6 +60,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public AlamosaurusEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setTame(false);
+        this.setTextureId(this.random.nextInt(2));
         this.goalSelector.addGoal(1, new FloatGoal((this)));
         this.goalSelector.addGoal(2, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));//Que las entidades se acerquen para procrear
@@ -188,16 +197,21 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
+        if (pCompound.contains("TEXTUREID")) {
+            this.setTextureId(pCompound.getInt("TEXTUREID"));
+        }
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
+        tag.putInt("TEXTUREID", this.getTextureID());
         tag.putBoolean("isSitting", this.isSitting());
     }
     @Override
     protected void defineSynchedData(){
         super.defineSynchedData();
+        this.entityData.define(TEXTUREID, 0);
         this.entityData.define(SITTING, false);
     }
 

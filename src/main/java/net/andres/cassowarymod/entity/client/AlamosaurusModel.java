@@ -22,9 +22,9 @@ public class AlamosaurusModel extends GeoModel<AlamosaurusEntity> {
     @Override
     public ResourceLocation getTextureResource(AlamosaurusEntity alamosaurusEntity) {
         if(alamosaurusEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "textures/entity/alamo_baby1_dt.png");
+            return new ResourceLocation("cassowarymod","textures/entity/alamo_baby"+alamosaurusEntity.getTextureID()+".png");
         }
-        return new ResourceLocation("cassowarymod", "textures/entity/alamo1_dt.png");
+        return new ResourceLocation("cassowarymod","textures/entity/alamo"+alamosaurusEntity.getTextureID()+".png");
     }
 
     @Override
