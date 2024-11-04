@@ -16,25 +16,25 @@ public class CassowaryModel extends GeoModel<CassowaryEntity> {
     @Override
     public ResourceLocation getModelResource(CassowaryEntity cassowaryEntity) {
         if(cassowaryEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "geo/nm_cassowary_baby.geo.json");
+            return new ResourceLocation("cassowary_mod_1", "geo/nm_cassowary_baby.geo.json");
         }
-        return new ResourceLocation("cassowarymod", "geo/nm_cassowary.geo.json");
+        return new ResourceLocation("cassowary_mod_1", "geo/nm_cassowary.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(CassowaryEntity cassowaryEntity) {
         if(cassowaryEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "textures/entity/nm_cassowary_baby_texture.png");
+            return new ResourceLocation("cassowary_mod_1", "textures/entity/nm_cassowary_baby_texture.png");
         }
-        return new ResourceLocation("cassowarymod", "textures/entity/nm_cassowary_texture.png");
+        return new ResourceLocation("cassowary_mod_1", "textures/entity/nm_cassowary_texture.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(CassowaryEntity cassowaryEntity) {
         if(cassowaryEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "animations/nm_cassowary_baby.animation.json");
+            return new ResourceLocation("cassowary_mod_1", "animations/nm_cassowary_baby.animation.json");
         }
-        return new ResourceLocation("cassowarymod", "animations/nm_cassowary.animation.json");
+        return new ResourceLocation("cassowary_mod_1", "animations/nm_cassowary.animation.json");
     }
 
     //@Override

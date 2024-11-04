@@ -20,9 +20,9 @@ public class CassowaryRenderer extends GeoEntityRenderer<CassowaryEntity> {
     @Override
     public ResourceLocation getTextureLocation(CassowaryEntity animatable) {
         if(animatable.isBaby()){
-            return new ResourceLocation("cassowarymod", "textures/entity/nm_cassowary_baby_texture.png");
+            return new ResourceLocation("cassowary_mod_1", "textures/entity/nm_cassowary_baby_texture.png");
         }
-        return new ResourceLocation("cassowarymod", "textures/entity/nm_cassowary_texture.png");
+        return new ResourceLocation("cassowary_mod_1", "textures/entity/nm_cassowary_texture.png");
     }
 
     @Override

@@ -4,8 +4,11 @@ import com.mojang.logging.LogUtils;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
 import net.andres.cassowarymod.entity.custom.ModEntities;
+import net.andres.cassowarymod.items.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -32,6 +35,8 @@ public class CassowaryMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -50,6 +55,9 @@ public class CassowaryMod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+           event.accept(ModItems.ALAMOFEMUR);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

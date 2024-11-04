@@ -17,9 +17,9 @@ public class AlamosaurusRenderer extends GeoEntityRenderer<AlamosaurusEntity> {
     @Override
     public ResourceLocation getTextureLocation(AlamosaurusEntity animatable) {
         if(animatable.isBaby()){
-            return new ResourceLocation("cassowarymod","textures/entity/alamo_baby"+animatable.getTextureID()+".png");
+            return new ResourceLocation("cassowary_mod_1","textures/entity/alamo_baby"+animatable.getTextureID()+".png");
         }
-        return new ResourceLocation("cassowarymod","textures/entity/alamo"+animatable.getTextureID()+".png");
+        return new ResourceLocation("cassowary_mod_1","textures/entity/alamo"+animatable.getTextureID()+".png");
     }
 
 

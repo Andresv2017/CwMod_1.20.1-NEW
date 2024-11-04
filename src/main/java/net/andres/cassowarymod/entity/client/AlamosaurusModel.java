@@ -14,25 +14,25 @@ public class AlamosaurusModel extends GeoModel<AlamosaurusEntity> {
     @Override
     public ResourceLocation getModelResource(AlamosaurusEntity alamosaurusEntity) {
         if(alamosaurusEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "geo/alamo_baby_dt.geo.json");
+            return new ResourceLocation("cassowary_mod_1", "geo/alamo_baby_dt.geo.json");
         }
-        return new ResourceLocation("cassowarymod", "geo/alamo_dt.geo.json");
+        return new ResourceLocation("cassowary_mod_1", "geo/alamo_dt.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(AlamosaurusEntity alamosaurusEntity) {
         if(alamosaurusEntity.isBaby()){
-            return new ResourceLocation("cassowarymod","textures/entity/alamo_baby"+alamosaurusEntity.getTextureID()+".png");
+            return new ResourceLocation("cassowary_mod_1","textures/entity/alamo_baby"+alamosaurusEntity.getTextureID()+".png");
         }
-        return new ResourceLocation("cassowarymod","textures/entity/alamo"+alamosaurusEntity.getTextureID()+".png");
+        return new ResourceLocation("cassowary_mod_1","textures/entity/alamo"+alamosaurusEntity.getTextureID()+".png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(AlamosaurusEntity alamosaurusEntity) {
         if(alamosaurusEntity.isBaby()){
-            return new ResourceLocation("cassowarymod", "animations/alamo_baby_dt.animation.json");
+            return new ResourceLocation("cassowary_mod_1", "animations/alamo_baby_dt.animation.json");
         }
-        return new ResourceLocation("cassowarymod", "animations/alamo_dt.animation.json");
+        return new ResourceLocation("cassowary_mod_1", "animations/alamo_dt.animation.json");
     }
 
     //@Override
