@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
 import net.andres.cassowarymod.entity.custom.ModEntities;
+import net.andres.cassowarymod.items.ModCreativeModTabs;
 import net.andres.cassowarymod.items.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -34,6 +35,8 @@ public class CassowaryMod
     public CassowaryMod(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
 
