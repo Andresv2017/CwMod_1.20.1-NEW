@@ -200,6 +200,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         if (pCompound.contains("TEXTUREID")) {
             this.setTextureId(pCompound.getInt("TEXTUREID"));
         }
+        setSitting(pCompound.getBoolean("isSitting"));
     }
 
     @Override

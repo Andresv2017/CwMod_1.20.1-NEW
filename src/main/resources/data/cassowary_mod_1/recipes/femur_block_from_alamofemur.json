@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cassowary_mod_1:alamofemur"
+    }
+  },
+  "result": {
+    "item": "cassowary_mod_1:femur_block"
+  }
+
+
+}

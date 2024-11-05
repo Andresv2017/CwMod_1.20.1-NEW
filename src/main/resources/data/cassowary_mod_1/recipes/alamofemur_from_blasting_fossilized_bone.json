@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "alamofemur",
+  "ingredient": {
+    "item": "cassowary_mod_1:fossilized_bone"
+  },
+  "result": "cassowary_mod_1:alamofemur"
+}

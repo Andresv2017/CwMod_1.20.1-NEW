@@ -188,6 +188,7 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
+        setSitting(pCompound.getBoolean("isSitting"));
     }
 
     @Override

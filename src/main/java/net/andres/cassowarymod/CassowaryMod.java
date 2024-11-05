@@ -62,6 +62,7 @@ public class CassowaryMod
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
            event.accept(ModItems.ALAMOFEMUR);
+           event.accept(ModItems.FOSSILIZED_BONE);
         }
     }
 

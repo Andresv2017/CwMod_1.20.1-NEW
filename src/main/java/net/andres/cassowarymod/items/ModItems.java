@@ -15,6 +15,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ALAMOFEMUR = ITEMS.register("alamofemur",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> FOSSILIZED_BONE = ITEMS.register("fossilized_bone",
+            () -> new Item(new Item.Properties()));
 
     public  static  void  register(IEventBus eventBus){
         ITEMS.register(eventBus);
