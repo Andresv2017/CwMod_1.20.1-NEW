@@ -2,10 +2,12 @@ package net.andres.cassowarymod.block;
 
 import net.andres.cassowarymod.CassowaryMod;
 import net.andres.cassowarymod.items.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +22,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, CassowaryMod.MODID);
 
     public static final RegistryObject<Block> FEMUR_BLOCK = registerBlock("femur_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).sound(SoundType.AMETHYST)));
-public static final RegistryObject<Block> FOSSIL_BLOCK = registerBlock("fossil_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BONE_BLOCK).sound(SoundType.STONE)));
+public static final RegistryObject<Block> FOSSIL_BLOCK = registerBlock("fossil_block", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6))); //UniformInt Cuantos orbes de experiencia dropea//
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
