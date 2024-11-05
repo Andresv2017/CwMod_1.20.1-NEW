@@ -1,6 +1,7 @@
 package net.andres.cassowarymod.items;
 
 import net.andres.cassowarymod.CassowaryMod;
+import net.andres.cassowarymod.block.ModBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -17,6 +18,7 @@ public class ModCreativeModTabs {
             .title(Component.translatable("creativetab.andrechu_mod"))
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(ModItems.ALAMOFEMUR.get());
+                pOutput.accept(ModBlocks.FEMUR_BLOCK.get());
             })
             .build());
 

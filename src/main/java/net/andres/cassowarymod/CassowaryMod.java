@@ -1,6 +1,7 @@
 package net.andres.cassowarymod;
 
 import com.mojang.logging.LogUtils;
+import net.andres.cassowarymod.block.ModBlocks;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
 import net.andres.cassowarymod.entity.custom.ModEntities;
@@ -39,6 +40,7 @@ public class CassowaryMod
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
