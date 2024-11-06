@@ -19,6 +19,7 @@ public class ModCreativeModTabs {
             .displayItems((pParameters, pOutput) -> {
                 pOutput.accept(ModItems.ALAMOFEMUR.get());
                 pOutput.accept(ModItems.FOSSILIZED_BONE.get());
+                pOutput.accept(ModItems.FOSSIL_RADAR.get());
                 pOutput.accept(ModBlocks.FEMUR_BLOCK.get());
                 pOutput.accept(ModBlocks.FOSSIL_BLOCK.get());
 
