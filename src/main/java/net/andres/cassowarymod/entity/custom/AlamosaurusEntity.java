@@ -1,5 +1,6 @@
 package net.andres.cassowarymod.entity.custom;
 
+import net.andres.cassowarymod.entity.goals.BaseMeleeAttackGoal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -36,6 +37,9 @@ import java.util.Random;
 
 public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
+    private final int baseAttackDuration = 100;
+    private final int baseAttackActionPoint = 65;
+
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     private static final EntityDataAccessor<Boolean> SITTING = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.BOOLEAN);
@@ -47,6 +51,20 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public int getTextureID(){
         return this.getEntityData().get(TEXTUREID);
     }
+
+    private static final EntityDataAccessor<Integer> ATTACK_ANIMATION = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.INT);
+
+    public static final int NO_ANIMATION = 0;
+    public static final int BASE_ATTACK = 1;
+
+    public int getAttackAnimation() {
+        return this.entityData.get(ATTACK_ANIMATION);
+    }
+
+    public void setAttackAnimation(int animation) {
+        this.entityData.set(ATTACK_ANIMATION, animation);
+    }
+
 
     public static AttributeSupplier setAttributes(){
         return TamableAnimal.createMobAttributes()
@@ -68,7 +86,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8.0F));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0)); // Se mueve por el mundo
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
+        this.goalSelector.addGoal(5, new BaseMeleeAttackGoal(this, baseAttackDuration, baseAttackActionPoint, 40, 1.0, true));
         this.goalSelector.addGoal(6, new FollowOwnerGoal(this, 1.0,10.0F,2.0F, false));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(1, new OwnerHurtTargetGoal(this));
@@ -80,11 +98,12 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.alamo_dt.walking");
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.alamo_dt.default");
     public static final RawAnimation SIT = RawAnimation.begin().thenLoop("animation.alamo_dt.sitting");
+    public static final RawAnimation ATTACK_ANIM = RawAnimation.begin().thenPlay("animation.alamo_dt.stomp_attacking");
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController[] { new AnimationController((GeoAnimatable)this, "movecontroller", 5, this::movementPredicate) });
-        controllers.add(new AnimationController[] { new AnimationController((GeoAnimatable)this, "attackcontroller", 5, this::attackPredicate) });
+        controllers.add(new AnimationController<>(this, "Attack", 4, this::attackingPredicate));
         controllers.add(genericDeathController(this));
     }
 
@@ -95,21 +114,14 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
     public final Random random = new Random();
 
-    public PlayState attackPredicate(AnimationState event) {
-        if(this.swinging && event.getController().getAnimationState().equals(AnimationController.State.STOPPED)){
-            event.getController().forceAnimationReset();
 
-            int AttackCount = random.nextInt(2);
-
-            if(AttackCount == 0) {
-                event.getController().setAnimation(RawAnimation.begin().then("animation.alamo_dt.stomp_attacking", Animation.LoopType.PLAY_ONCE));
-            } else {
-                event.getController().setAnimation(RawAnimation.begin().then("animation.alamo_dt.tail_attacking", Animation.LoopType.PLAY_ONCE));
-            }
-
-            this.swinging = false;
+    public <E extends GeoAnimatable> PlayState attackingPredicate(AnimationState<E> state) {
+        if (getAttackAnimation() == BASE_ATTACK) {
+            return state.setAndContinue(ATTACK_ANIM);
         }
-        return PlayState.CONTINUE;
+
+        state.getController().forceAnimationReset();
+        return PlayState.STOP;
     }
 
     protected PlayState movementPredicate(AnimationState event) {
@@ -188,11 +200,6 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
     }
 
-    /*Cuando Golpea a Alguien
-    @Override
-    public boolean doHurtTarget(Entity pEntity) {
-        return super.doHurtTarget(pEntity);
-    }*/
 
     @Override
     public void readAdditionalSaveData(CompoundTag pCompound) {
@@ -214,6 +221,7 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
         super.defineSynchedData();
         this.entityData.define(TEXTUREID, 0);
         this.entityData.define(SITTING, false);
+        this.entityData.define(ATTACK_ANIMATION, NO_ANIMATION);
     }
 
     public void setSitting(boolean sitting){
