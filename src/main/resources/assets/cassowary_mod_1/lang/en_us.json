@@ -4,6 +4,10 @@
   "item.cassowary_mod_1.fossil_radar": "Radar de Fosiles",
   "block.cassowary_mod_1.femur_block": "Bloque de Alamosaurus Femur",
   "block.cassowary_mod_1.fossil_block": "Bloque de Fosil",
+  "item.cassowary_mod_1.dragon_fruit": "Fruta Dragon",
+  "item.cassowary_mod_1.prehistoric_coal": "Carbon Prehistorico",
+
+  "tooltip.cassowary_mod_1.fossil_radar.tooltip": "Dispositivo para localizar fósiles enterrados",
 
   "creativetab.andrechu_mod": "Andrechú Mod"
 }

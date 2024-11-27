@@ -22,6 +22,8 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModItems.FOSSIL_RADAR.get());
                 pOutput.accept(ModBlocks.FEMUR_BLOCK.get());
                 pOutput.accept(ModBlocks.FOSSIL_BLOCK.get());
+                pOutput.accept(ModItems.DRAGONFRUIT.get());
+                pOutput.accept(ModItems.PREHISTORIC_COAL.get());
 
             })
             .build());
