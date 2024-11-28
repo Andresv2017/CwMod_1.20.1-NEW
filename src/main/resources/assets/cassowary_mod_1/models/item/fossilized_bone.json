@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "cassowary_mod_1:item/fossilized_bone"
-  }
-}

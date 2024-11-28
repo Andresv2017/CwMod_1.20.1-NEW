@@ -1,6 +1,7 @@
 package net.andres.cassowarymod.items.custom;
 
 import net.andres.cassowarymod.block.ModBlocks;
+import net.andres.cassowarymod.tag.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -84,7 +85,7 @@ public class FossilRadarItem  extends Item {
 
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(ModBlocks.FOSSIL_BLOCK.get());
+        return state.is(ModTags.Blocks.FOSSIL_RADAR_VALUABLES);
     }
 
     @Override
