@@ -5,6 +5,7 @@ import net.andres.cassowarymod.block.ModBlocks;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
 import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
+import net.andres.cassowarymod.entity.custom.CassowaryEntity;
 import net.andres.cassowarymod.entity.custom.ModEntities;
 import net.andres.cassowarymod.items.ModCreativeModTabs;
 import net.andres.cassowarymod.items.ModItems;
@@ -62,6 +63,10 @@ public class CassowaryMod
         event.enqueueWork(() -> {
                     SpawnPlacements.register(ModEntities.ALAMOSAURUS.get(), SpawnPlacements.Type.ON_GROUND,
                             Heightmap.Types.MOTION_BLOCKING, AlamosaurusEntity::checkAlamoSpawnRules);
+
+                    SpawnPlacements.register(ModEntities.CASSOWARY.get(), SpawnPlacements.Type.ON_GROUND,
+                            Heightmap.Types.MOTION_BLOCKING, CassowaryEntity::checkCassoSpawnRules);
+
         });
     }
 
@@ -88,7 +93,7 @@ public class CassowaryMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            EntityRenderers.register(ModEntities.CASSUWARY.get(), CassowaryRenderer::new);
+            EntityRenderers.register(ModEntities.CASSOWARY.get(), CassowaryRenderer::new);
             EntityRenderers.register(ModEntities.ALAMOSAURUS.get(), AlamosaurusRenderer::new);
         }
     }

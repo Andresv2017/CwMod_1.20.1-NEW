@@ -32,7 +32,7 @@ public class ModEntities {
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, CassowaryMod.MODID);
 
-    public static final RegistryObject<EntityType<CassowaryEntity>> CASSUWARY = ENTITY_TYPES.register("casuario",
+    public static final RegistryObject<EntityType<CassowaryEntity>> CASSOWARY = ENTITY_TYPES.register("casuario",
             () -> EntityType.Builder.of(CassowaryEntity::new, MobCategory.CREATURE)
                     .sized(1.5f, 1.75f)
                     .build(String.valueOf(new ResourceLocation(CassowaryMod.MODID, "casuario"))));

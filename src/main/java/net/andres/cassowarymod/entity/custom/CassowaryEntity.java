@@ -1,11 +1,13 @@
 package net.andres.cassowarymod.entity.custom;
 
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
@@ -51,6 +53,10 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.4f)
                 .build();
+    }
+
+    public static boolean checkCassoSpawnRules(EntityType<CassowaryEntity> p_218242_, LevelAccessor p_218243_, MobSpawnType p_218244_, BlockPos p_218245_, RandomSource p_218246_) {
+        return checkAnimalSpawnRules(p_218242_,p_218243_,p_218244_,p_218245_,p_218246_);
     }
 
 
@@ -241,7 +247,7 @@ public class CassowaryEntity extends TamableAnimal implements GeoEntity {
     //Bebes
     @Override
     public @Nullable AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return ModEntities.CASSUWARY.get().create(serverLevel);
+        return ModEntities.CASSOWARY.get().create(serverLevel);
     }
 
     //Con que se pueden reproducir

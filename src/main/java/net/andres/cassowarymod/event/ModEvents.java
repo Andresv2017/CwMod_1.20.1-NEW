@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEvents {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event){
-        event.put(ModEntities.CASSUWARY.get(), CassowaryEntity.setAttributes());
+        event.put(ModEntities.CASSOWARY.get(), CassowaryEntity.setAttributes());
         event.put(ModEntities.ALAMOSAURUS.get(), AlamosaurusEntity.setAttributes());
     }
 }

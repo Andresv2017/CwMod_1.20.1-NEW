@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:plains"
+  ],
+  "spawners": {
+    "type": "cassowary_mod_1:casuario",
+    "weight": 50,
+    "maxCount": 4,
+    "minCount": 2
+  }
+}
