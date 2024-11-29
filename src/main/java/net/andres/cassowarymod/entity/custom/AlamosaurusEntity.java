@@ -1,11 +1,13 @@
 package net.andres.cassowarymod.entity.custom;
 
 import net.andres.cassowarymod.entity.goals.BaseMeleeAttackGoal;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
@@ -73,6 +75,10 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
                 .add(Attributes.ATTACK_SPEED, 1.0f)
                 .add(Attributes.MOVEMENT_SPEED, 0.2f)
                 .build();
+    }
+
+    public static boolean checkAlamoSpawnRules(EntityType<AlamosaurusEntity> p_218242_, LevelAccessor p_218243_, MobSpawnType p_218244_, BlockPos p_218245_, RandomSource p_218246_) {
+        return checkAnimalSpawnRules(p_218242_,p_218243_,p_218244_,p_218245_,p_218246_);
     }
 
     public AlamosaurusEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {

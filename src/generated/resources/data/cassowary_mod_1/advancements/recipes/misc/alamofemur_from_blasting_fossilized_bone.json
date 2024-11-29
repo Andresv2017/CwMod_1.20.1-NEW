@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fossilized_bone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cassowary_mod_1:fossilized_bone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cassowary_mod_1:alamofemur_from_blasting_fossilized_bone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_fossilized_bone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cassowary_mod_1:alamofemur_from_blasting_fossilized_bone"
+    ]
+  },
+  "sends_telemetry_event": false
+}

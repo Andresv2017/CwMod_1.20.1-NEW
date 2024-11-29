@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "minecraft:plains"
+  ],
+  "spawners": {
+    "type": "cassowary_mod_1:alamosaurus",
+    "weight": 50,
+    "maxCount": 4,
+    "minCount": 1
+  }
+}

@@ -4,13 +4,17 @@ import com.mojang.logging.LogUtils;
 import net.andres.cassowarymod.block.ModBlocks;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
+import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
 import net.andres.cassowarymod.entity.custom.ModEntities;
 import net.andres.cassowarymod.items.ModCreativeModTabs;
 import net.andres.cassowarymod.items.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -55,6 +59,10 @@ public class CassowaryMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+                    SpawnPlacements.register(ModEntities.ALAMOSAURUS.get(), SpawnPlacements.Type.ON_GROUND,
+                            Heightmap.Types.MOTION_BLOCKING, AlamosaurusEntity::checkAlamoSpawnRules);
+        });
     }
 
     // Add the example block item to the building blocks tab

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_femur_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cassowary_mod_1:femur_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "cassowary_mod_1:alamofemur"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_femur_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cassowary_mod_1:alamofemur"
+    ]
+  },
+  "sends_telemetry_event": false
+}
