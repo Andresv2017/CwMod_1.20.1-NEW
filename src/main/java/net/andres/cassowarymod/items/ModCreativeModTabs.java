@@ -24,6 +24,7 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModBlocks.FOSSIL_BLOCK.get());
                 pOutput.accept(ModItems.DRAGONFRUIT.get());
                 pOutput.accept(ModItems.PREHISTORIC_COAL.get());
+                pOutput.accept(ModItems.CROCODILE_SPEAR.get());
 
                 //Araucaria
                 pOutput.accept(ModBlocks.ARAUCARIA_PLANKS.get());
