@@ -29,6 +29,20 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.add(ModBlocks.FOSSIL_BLOCK.get(),
                 block -> createFossilDrops(ModBlocks.FOSSIL_BLOCK.get(), ModItems.FOSSILIZED_BONE.get()));
+
+        //Dropeos Araucaria
+        this.dropSelf(ModBlocks.ARAUCARIA_PLANKS.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_STAIRS.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_BUTTON.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_PRESURE_PLATE.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_TRAPDOOR.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_FENCE.get());
+        this.dropSelf(ModBlocks.ARAUCARIA_FENCE_GATE.get());
+
+        this.add(ModBlocks.ARAUCARIA_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ARAUCARIA_SLAB.get()));
+        this.add(ModBlocks.ARAUCARIA_DOOR.get(),
+            block -> createDoorTable(ModBlocks.ARAUCARIA_DOOR.get()));
     }
 
     protected LootTable.Builder createFossilDrops(Block pBlock, Item item) {

@@ -1,3 +1,12 @@
-// 1.20.1	2024-11-28T18:28:48.6865784	Loot Tables
+// 1.20.1	2024-11-29T21:24:29.0742781	Loot Tables
+616758877496e9af45d4ebd1f997e1868293538f data/cassowary_mod_1/loot_tables/blocks/araucaria_button.json
+d27ba227d8f99f46c7534a144f15c427ddd672c1 data/cassowary_mod_1/loot_tables/blocks/araucaria_door.json
+ebb65e9312cd53ad87ce9ad647cfa5e7b5c42278 data/cassowary_mod_1/loot_tables/blocks/araucaria_fence.json
+842c37e179d73485ed8ccbb5ab180688386abe74 data/cassowary_mod_1/loot_tables/blocks/araucaria_fence_gate.json
+9b03f1de8e6ff7dddb906dc4eb7c117450920521 data/cassowary_mod_1/loot_tables/blocks/araucaria_planks.json
+09a30af3ec4f1167bb37ac867d6937be6c98be98 data/cassowary_mod_1/loot_tables/blocks/araucaria_presure_plate.json
+cb6db01da16e8f0863f1e71e39ae06208ebe6389 data/cassowary_mod_1/loot_tables/blocks/araucaria_slab.json
+86c773fc912ecca86e5843d759c1d3e5ce1e8f9c data/cassowary_mod_1/loot_tables/blocks/araucaria_stairs.json
+c2f4d5df7638c22bc7a8e92f5621432407d7cedb data/cassowary_mod_1/loot_tables/blocks/araucaria_trapdoor.json
 0823f841b534b723756ac9ac1461540cbc0d1bcd data/cassowary_mod_1/loot_tables/blocks/femur_block.json
 2a5e031225f89dbcfa1ed36031b173d52ac039cf data/cassowary_mod_1/loot_tables/blocks/fossil_block.json

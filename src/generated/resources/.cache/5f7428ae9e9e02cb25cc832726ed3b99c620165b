@@ -1,5 +1,13 @@
-// 1.20.1	2024-11-28T18:28:48.6855805	Item Models: cassowary_mod_1
+// 1.20.1	2024-11-29T21:24:29.073281	Item Models: cassowary_mod_1
 b0bd745883956795ac6a2b7735896ba6df83e9e6 assets/cassowary_mod_1/models/item/alamofemur.json
+b8f6b08c4c1d7ebae1fd78aaa83beea4abe09080 assets/cassowary_mod_1/models/item/araucaria_button.json
+4cf9baeeffe2d26ca0f9e7102d0293d4d317a019 assets/cassowary_mod_1/models/item/araucaria_door.json
+f54d2310031ad65971702694a53f4af5546695da assets/cassowary_mod_1/models/item/araucaria_fence.json
+60a8761cbf74a9d89fd4e7b67eb935d467d3d303 assets/cassowary_mod_1/models/item/araucaria_fence_gate.json
+d341d3378128abb8f414dbbc63c5eefdab1aaa5e assets/cassowary_mod_1/models/item/araucaria_presure_plate.json
+ef6829a756b301086392a717003355f879876d5a assets/cassowary_mod_1/models/item/araucaria_slab.json
+c748c19565e8cc8c6322302c09aba8f4a02073ea assets/cassowary_mod_1/models/item/araucaria_stairs.json
+72310170cece493ff967c052ef62870e90c4e296 assets/cassowary_mod_1/models/item/araucaria_trapdoor.json
 f24ba9ed5bfe2c1b9afe6790fa6cca169e178969 assets/cassowary_mod_1/models/item/dragon_fruit.json
 90f9a3a3f5614178d684ca0a09abd6f5f800553b assets/cassowary_mod_1/models/item/fossilized_bone.json
 e2fac0bef6ce19c3fccf09cc08091c8f096f4bb6 assets/cassowary_mod_1/models/item/fossil_radar.json

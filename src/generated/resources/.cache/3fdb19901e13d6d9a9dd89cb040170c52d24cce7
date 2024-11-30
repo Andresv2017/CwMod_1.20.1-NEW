@@ -1,5 +1,8 @@
-// 1.20.1	2024-11-28T18:28:48.6885721	Tags for minecraft:block mod id cassowary_mod_1
+// 1.20.1	2024-11-29T21:24:29.0752753	Tags for minecraft:block mod id cassowary_mod_1
 559911cf00ef7f21c3141ee419ffff3801f00760 data/cassowary_mod_1/tags/blocks/fossil_detector_valuables.json
+2fbc4669b732ccdcccc757c1e50c225d81eee094 data/minecraft/tags/blocks/fences.json
+7117b0069201f39aa42b93a5600b5a7b1a8451cd data/minecraft/tags/blocks/fence_gates.json
+5a357ebb0f8c9f8359740408150563ab8806f7b2 data/minecraft/tags/blocks/mineable/axe.json
 559911cf00ef7f21c3141ee419ffff3801f00760 data/minecraft/tags/blocks/mineable/pickaxe.json
 c87a7fbf4576ee816cce87c9f47e92f1e68a399e data/minecraft/tags/blocks/needs_iron_tool.json
 ed14956c95f542d016621562fcaaac6b0b789051 data/minecraft/tags/blocks/needs_stone_tool.json

@@ -32,6 +32,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.FOSSIL_BLOCK.get());
 
+        this.tag(BlockTags.MINEABLE_WITH_AXE)
+                .add(ModBlocks.ARAUCARIA_PLANKS.get());
+
+        this.tag(BlockTags.FENCES)
+                .add(ModBlocks.ARAUCARIA_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.ARAUCARIA_FENCE_GATE.get());
+
     }
 
 }

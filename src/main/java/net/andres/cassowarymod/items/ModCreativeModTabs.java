@@ -25,6 +25,18 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModItems.DRAGONFRUIT.get());
                 pOutput.accept(ModItems.PREHISTORIC_COAL.get());
 
+                //Araucaria
+                pOutput.accept(ModBlocks.ARAUCARIA_PLANKS.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_STAIRS.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_SLAB.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_BUTTON.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_PRESURE_PLATE.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_FENCE.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_FENCE_GATE.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_DOOR.get());
+                pOutput.accept(ModBlocks.ARAUCARIA_TRAPDOOR.get());
+
+
             })
             .build());
 
