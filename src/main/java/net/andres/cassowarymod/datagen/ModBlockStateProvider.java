@@ -31,6 +31,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlockWithRenderType(((DoorBlock) ModBlocks.ARAUCARIA_DOOR.get()), modLoc("block/araucaria_door_bottom"), modLoc("block/araucaria_door_top"), "cutout");
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.ARAUCARIA_TRAPDOOR.get()), modLoc("block/araucaria_trapdoor"), true, "cutout");
 
+        blockWithItem(ModBlocks.MOD_PORTAL);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

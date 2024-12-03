@@ -37,6 +37,8 @@ public class ModCreativeModTabs {
                 pOutput.accept(ModBlocks.ARAUCARIA_DOOR.get());
                 pOutput.accept(ModBlocks.ARAUCARIA_TRAPDOOR.get());
 
+                pOutput.accept(ModBlocks.MOD_PORTAL.get());
+
 
             })
             .build());

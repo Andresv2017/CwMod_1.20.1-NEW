@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-29T21:24:29.0712864	Block States: cassowary_mod_1
+// 1.20.1	2024-12-02T11:16:03.1953088	Block States: cassowary_mod_1
 069ee88c09d3fde761163dcf53fa1656a9b7147a assets/cassowary_mod_1/blockstates/araucaria_button.json
 ba366a7e2d1445312a9f9e9fd00e383cbfd5d038 assets/cassowary_mod_1/blockstates/araucaria_door.json
 26020d248a6c0d79bf4b39e02c5c90ccb305a23b assets/cassowary_mod_1/blockstates/araucaria_fence.json
@@ -10,6 +10,7 @@ a30df9ed9d996758259389e8a17da076060d3166 assets/cassowary_mod_1/blockstates/arau
 4a75ead9bf3694c090b1061fbe170727438a8e93 assets/cassowary_mod_1/blockstates/araucaria_trapdoor.json
 0367cbd3589fd4e6672698872cc56d0cb253b9ff assets/cassowary_mod_1/blockstates/femur_block.json
 d271b91bb257cbb7e78c3eb34ab59858d24d890b assets/cassowary_mod_1/blockstates/fossil_block.json
+29a1ab041ed66e22e88b1db60839d2d547b8baee assets/cassowary_mod_1/blockstates/mod_portal.json
 f39c06c5ffd61e558f391dba0c8a7de8c4b3a099 assets/cassowary_mod_1/models/block/araucaria_button.json
 a01ac5aba0b3490306a82f95276bdc0168e1c7e3 assets/cassowary_mod_1/models/block/araucaria_button_pressed.json
 dcd637c9d7c511c64226ea167a1971c9d75bc4e5 assets/cassowary_mod_1/models/block/araucaria_door_bottom_left.json
@@ -39,6 +40,8 @@ eca4678beee077b872fc9293bdf9dbbdd6b4df14 assets/cassowary_mod_1/models/block/ara
 62a137e550d6dc88e5d56422fa5d72ba1a230858 assets/cassowary_mod_1/models/block/araucaria_trapdoor_top.json
 bbf9d535111890cc14c3ccaf5deeae3ec0e6a3ab assets/cassowary_mod_1/models/block/femur_block.json
 697a0874375a504ec337e3b3da207de66325ce93 assets/cassowary_mod_1/models/block/fossil_block.json
+be18aa0a16135a4a7236bcd02b9f8f9587dc95b9 assets/cassowary_mod_1/models/block/mod_portal.json
 080100d068ee5397ac520e34996d1b240fdb6d5e assets/cassowary_mod_1/models/item/araucaria_planks.json
 2cb5c4662d70c1cc9a71f9b6cc98c0d801a9df2c assets/cassowary_mod_1/models/item/femur_block.json
 1a39919a7d4de5ee41c106138db62acae4f2a19c assets/cassowary_mod_1/models/item/fossil_block.json
+7af0cb76b3184aaf5e3dfc070b456e910ebd1df2 assets/cassowary_mod_1/models/item/mod_portal.json
