@@ -1,6 +1,7 @@
 package net.andres.cassowarymod.worldgen.dimension;
 
 import net.andres.cassowarymod.CassowaryMod;
+import net.andres.cassowarymod.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -58,16 +59,16 @@ public class ModDimensions {
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
                                 com.mojang.datafixers.util.Pair.of(
-                                        Climate.parameters(0.0F, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0F),
+                                        Climate.parameters(0.0F, 0.0F, 0.7F, -0.1F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(Biomes.SNOWY_PLAINS)),
                                 com.mojang.datafixers.util.Pair.of(
-                                        Climate.parameters(0.26F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F),
+                                        Climate.parameters(0.26F, 0.0F, 0.7F, 0.0F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(Biomes.JUNGLE)),
                                 com.mojang.datafixers.util.Pair.of(
-                                        Climate.parameters(0.0F, -0.04F, 0.01F, 0.08F, 0.0F, 0.0F, 0.0F)
-                                        , biomeRegistry.getOrThrow(Biomes.DEEP_OCEAN))
+                                        Climate.parameters(0.5F, 0.2F, -1F, -0.5F, 0.0F, 0.0F, 0.0F)
+                                        , biomeRegistry.getOrThrow(ModBiomes.TEST_BIOME))
                         ))),
-                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.LARGE_BIOMES));
+                noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));
 
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.TEST_DIM_TYPE), noiseBasedChunkGenerator);

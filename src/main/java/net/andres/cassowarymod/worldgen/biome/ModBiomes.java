@@ -9,7 +9,6 @@ import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.*;
-import net.minecraft.data.worldgen.biome.OverworldBiomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -42,6 +41,7 @@ public class ModBiomes {
         );
         BiomeDefaultFeatures.addFossilDecoration(generationBuilder);
 
+
         // Crea el bioma usando baseOcean
         return baseOcean(
                 spawnBuilder,
@@ -59,6 +59,7 @@ public class ModBiomes {
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .waterColor(pWaterColor)
                         .waterFogColor(pWaterFogColor)
+                        .grassColorOverride(0x7f03fc)
                         .fogColor(0xc0d8ff) // Color de niebla general
                         .skyColor(0x77adff) // Color del cielo
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
