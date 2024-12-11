@@ -35,7 +35,7 @@ public class AlamosaurusModel extends GeoModel<AlamosaurusEntity> {
         return new ResourceLocation("cassowary_mod_1", "animations/alamo_dt.animation.json");
     }
 
-    //@Override
+    @Override
     public void setCustomAnimations(AlamosaurusEntity animatable, long instanceId, AnimationState<AlamosaurusEntity> animationState) {
         CoreGeoBone head = getAnimationProcessor().getBone("Head");
         if(head != null){

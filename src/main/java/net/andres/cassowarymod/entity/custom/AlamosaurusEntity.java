@@ -39,9 +39,6 @@ import java.util.Random;
 
 public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
 
-    private final int baseAttackDuration = 100;
-    private final int baseAttackActionPoint = 65;
-
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     private static final EntityDataAccessor<Boolean> SITTING = SynchedEntityData.defineId(AlamosaurusEntity.class, EntityDataSerializers.BOOLEAN);
@@ -59,6 +56,9 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public static final int NO_ANIMATION = 0;
     public static final int BASE_ATTACK = 1;
 
+    private final int baseAttackDuration = 100;
+    private final int baseAttackActionPoint = 65;
+
     public int getAttackAnimation() {
         return this.entityData.get(ATTACK_ANIMATION);
     }
@@ -66,7 +66,6 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public void setAttackAnimation(int animation) {
         this.entityData.set(ATTACK_ANIMATION, animation);
     }
-
 
     public static AttributeSupplier setAttributes(){
         return TamableAnimal.createMobAttributes()
@@ -278,5 +277,10 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
+    }
+
+    @Override
+    public boolean isTame() {
+        return false;
     }
 }

@@ -55,6 +55,7 @@ public class ModDimensions {
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
+
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
@@ -65,7 +66,7 @@ public class ModDimensions {
                                         Climate.parameters(0.26F, 0.0F, 0.7F, 0.0F, 0.0F, 0.0F, 0.0F),
                                         biomeRegistry.getOrThrow(Biomes.SPARSE_JUNGLE)),
                                 com.mojang.datafixers.util.Pair.of(
-                                        Climate.parameters(0.5F, 0.2F, -1F, -0.5F, 0.0F, 0.0F, 0.0F)
+                                        Climate.parameters(0.5F, 0.2F, -1F, -1F, -0.7F, 0.0F, 0.0F)
                                         , biomeRegistry.getOrThrow(ModBiomes.TEST_BIOME))
                         ))),
                 noiseGenSettings.getOrThrow(NoiseGeneratorSettings.OVERWORLD));

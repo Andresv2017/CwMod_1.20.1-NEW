@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.andres.cassowarymod.block.ModBlocks;
 import net.andres.cassowarymod.entity.client.AlamosaurusRenderer;
 import net.andres.cassowarymod.entity.client.CassowaryRenderer;
+import net.andres.cassowarymod.entity.client.SmilodonRenderer;
 import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
 import net.andres.cassowarymod.entity.custom.CassowaryEntity;
 import net.andres.cassowarymod.entity.custom.ModEntities;
@@ -98,6 +99,8 @@ public class CassowaryMod
         {
             EntityRenderers.register(ModEntities.CASSOWARY.get(), CassowaryRenderer::new);
             EntityRenderers.register(ModEntities.ALAMOSAURUS.get(), AlamosaurusRenderer::new);
+            EntityRenderers.register(ModEntities.SMILODON.get(), SmilodonRenderer::new);
+
         }
     }
 }

@@ -42,4 +42,8 @@ public class ModEntities {
                     .sized(2.5f,5.75f)
                     .build(String.valueOf(new ResourceLocation(CassowaryMod.MODID, "alamosaurus"))));
 
+    public static final RegistryObject<EntityType<SmilodonEntity>> SMILODON = ENTITY_TYPES.register("smilodon",
+            () -> EntityType.Builder.of(SmilodonEntity::new, MobCategory.CREATURE)
+                    .sized(1.5f,1.75f)
+                    .build(String.valueOf(new ResourceLocation(CassowaryMod.MODID, "smilodon"))));
 }
