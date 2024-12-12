@@ -1,5 +1,10 @@
 package net.andres.cassowarymod.entity.custom.util;
 
+import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -90,5 +95,33 @@ public class AnimatedTCreature extends TamableAnimal implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return cache;
+    }
+
+    private static final EntityDataAccessor<Integer> TEXTUREID = SynchedEntityData.defineId(AnimatedTCreature.class, EntityDataSerializers.INT);
+    public void setTextureId(int i){
+        this.getEntityData().set(TEXTUREID, i);
+    }
+    public int getTextureID(){
+        return this.getEntityData().get(TEXTUREID);
+    }
+
+    @Override
+    protected void defineSynchedData(){
+        super.defineSynchedData();
+        this.entityData.define(TEXTUREID, 0);
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putInt("TEXTUREID", this.getTextureID());
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag pCompound) {
+        super.readAdditionalSaveData(pCompound);
+        if (pCompound.contains("TEXTUREID")) {
+            this.setTextureId(pCompound.getInt("TEXTUREID"));
+        }
     }
 }

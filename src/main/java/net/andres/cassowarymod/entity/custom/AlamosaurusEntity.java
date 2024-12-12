@@ -278,9 +278,4 @@ public class AlamosaurusEntity extends TamableAnimal implements GeoEntity {
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
     }
-
-    @Override
-    public boolean isTame() {
-        return false;
-    }
 }
