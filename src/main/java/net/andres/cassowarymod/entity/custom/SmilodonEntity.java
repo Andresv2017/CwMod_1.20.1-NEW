@@ -48,9 +48,8 @@ public class SmilodonEntity extends TamableAnimal implements GeoEntity {
     protected SmilodonEntity(EntityType<? extends TamableAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.goalSelector.addGoal(1, new FloatGoal((this)));
-        //this.goalSelector.addGoal(2, new BaseMeleeAttackGoalS(this, 27, 20, 40, 1.0, true));
-        this.goalSelector.addGoal(2, new BaseMeleeAttackGoalS(this, 11, 5, 20, 1.0, true));
-        this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(2, new BaseMeleeAttackGoalS(this, 11, 5, 2, 1.0, true));
+        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0)); // Se mueve por el mundo
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(3, new NonTameRandomTargetGoal<>(this, Animal.class, false, PREY_SELECTOR));

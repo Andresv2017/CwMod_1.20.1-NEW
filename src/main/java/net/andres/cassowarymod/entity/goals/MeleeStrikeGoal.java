@@ -1,13 +1,12 @@
 package net.andres.cassowarymod.entity.goals;
 
-import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
+import net.andres.cassowarymod.entity.custom.util.AnimatedTCreature;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.goal.Goal;
 
 import java.util.EnumSet;
 
-public class BaseMeleeAttackGoal extends MoveToTargetGoal {
+public class MeleeStrikeGoal extends ReachTargetGoal {
     private final int attackDuration;
     private final int actionPoint;
     private final int attackCoolDown;
@@ -15,12 +14,12 @@ public class BaseMeleeAttackGoal extends MoveToTargetGoal {
     private long lastUseTime;
     private int ticksUntilNextAttack;
 
-    public BaseMeleeAttackGoal(AlamosaurusEntity mob, int attackDuration, int hurtTick, int attackCoolDown, double speedModifier, boolean followingEvenIfNotSeen ) {
+    public MeleeStrikeGoal(AnimatedTCreature mob, int attackDuration, int hurtTick, int attackCoolDown, double speedModifier, boolean followingEvenIfNotSeen ) {
         super(mob, speedModifier, followingEvenIfNotSeen);
         this.attackDuration = (int) Math.ceil(attackDuration / 2.0);
         this.actionPoint = hurtTick / 2;
         this.attackCoolDown = (int) Math.ceil(attackCoolDown / 2.0);
-        this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
     }
 
     @Override
@@ -29,7 +28,7 @@ public class BaseMeleeAttackGoal extends MoveToTargetGoal {
     }
 
     public boolean isAttacking() {
-        return this.mob.getAttackAnimation() == AlamosaurusEntity.BASE_ATTACK;
+        return this.mob.getAttackAnimation() == AnimatedTCreature.BASE_ATTACK;
     }
 
     public boolean canUse() {
@@ -73,7 +72,9 @@ public class BaseMeleeAttackGoal extends MoveToTargetGoal {
             double distToTargetSqr = this.mob.distanceToSqr(target);
 
             // Move to target
-            super.tick();
+            if (!isAttacking() && getAttackReachSqr(target) < distToTargetSqr) {
+                super.tick();
+            }
 
             // Attack target
             if (this.ticksUntilNextAttack == 0 && getAttackReachSqr(target) >= distToTargetSqr && !isAttacking()) {
@@ -91,16 +92,18 @@ public class BaseMeleeAttackGoal extends MoveToTargetGoal {
     }
 
     protected void startAttack() {
-        this.mob.setAttackAnimation(AlamosaurusEntity.BASE_ATTACK);
+        this.mob.setAttackAnimation(AnimatedTCreature.BASE_ATTACK);
         this.attackAnimationTick = this.attackDuration;
     }
 
     protected void stopAttack() {
-        this.mob.setAttackAnimation(AlamosaurusEntity.NO_ANIMATION);
+        this.mob.setAttackAnimation(AnimatedTCreature.NO_ANIMATION);
         this.ticksUntilNextAttack = this.attackCoolDown;
     }
 
-    protected boolean executeAttack(LivingEntity target) {  return mob.doHurtTarget(target);}
+    protected boolean executeAttack(LivingEntity target) {
+        return mob.doHurtTarget(target);
+    }
 
     protected  boolean isActionPoint() {
         return this.attackAnimationTick == (this.attackDuration - this.actionPoint);

@@ -1,6 +1,5 @@
 package net.andres.cassowarymod.entity.custom.util;
 
-import net.andres.cassowarymod.entity.custom.AlamosaurusEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -43,12 +42,14 @@ public class AnimatedTCreature extends TamableAnimal implements GeoEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController[] { new AnimationController((GeoAnimatable)this, "movecontroller", 5, this::movementPredicate) });
+        controllers.add(new AnimationController<>(this, "Attack", 4, this::attackingPredicate));
     }
 
     public static final RawAnimation WALK = RawAnimation.begin().thenLoop("walk");
     public static final RawAnimation IDLE = RawAnimation.begin().thenLoop("idle");
     public static final RawAnimation SPRINT = RawAnimation.begin().thenLoop("sprint");
     public static final RawAnimation SWIM = RawAnimation.begin().thenLoop("swim");
+    public static final RawAnimation ATTACK_ANIM = RawAnimation.begin().thenPlay("attack");
 
     protected PlayState movementPredicate(AnimationState event) {
         if (this.getDeltaMovement().horizontalDistance() > 1.0E-6D && !this.isInWater()) {
@@ -80,6 +81,14 @@ public class AnimatedTCreature extends TamableAnimal implements GeoEntity {
         return PlayState.CONTINUE;
     }
 
+    public <E extends GeoAnimatable> PlayState attackingPredicate(AnimationState<E> state) {
+        if (getAttackAnimation() == BASE_ATTACK) {
+            return state.setAndContinue(ATTACK_ANIM);
+        }
+        state.getController().forceAnimationReset();
+        return PlayState.STOP;
+    }
+
     @Override
     public @NotNull InteractionResult mobInteract(@NotNull Player player, @NotNull InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
@@ -109,6 +118,7 @@ public class AnimatedTCreature extends TamableAnimal implements GeoEntity {
     protected void defineSynchedData(){
         super.defineSynchedData();
         this.entityData.define(TEXTUREID, 0);
+        this.entityData.define(ATTACK_ANIMATION, NO_ANIMATION);
     }
 
     @Override
@@ -124,4 +134,18 @@ public class AnimatedTCreature extends TamableAnimal implements GeoEntity {
             this.setTextureId(pCompound.getInt("TEXTUREID"));
         }
     }
+    private static final EntityDataAccessor<Integer> ATTACK_ANIMATION = SynchedEntityData.defineId(AnimatedTCreature.class, EntityDataSerializers.INT);
+
+    public int getAttackAnimation() {
+        return this.entityData.get(ATTACK_ANIMATION);
+    }
+
+    public void setAttackAnimation(int animation) {
+        this.entityData.set(ATTACK_ANIMATION, animation);
+    }
+
+    public static final int NO_ANIMATION = 0;
+    public static final int BASE_ATTACK = 1;
+
+
 }

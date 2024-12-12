@@ -1,36 +1,36 @@
-[11dic.2024 22:07:07.957] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Usuario\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, cassowary_mod_1, --all, --output, C:\Andrés\Backup\CwMod_1.20.1-master\src\generated\resources, --existing, C:\Andrés\Backup\CwMod_1.20.1-master\src\main\resources]
-[11dic.2024 22:07:07.961] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[11dic.2024 22:07:08.062] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[11dic.2024 22:07:08.109] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Usuario/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[11dic.2024 22:07:08.440] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.10\7a15037366722893d76a3d0b2e9d1fd13a63a22d\javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[11dic.2024 22:07:08.444] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.10\e67d9b3451d64ccc812cbbd33c066bd3ebbf2167\lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[11dic.2024 22:07:08.448] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.10\2023f9726a509c5ba5a925cac934944066093de8\mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
-[11dic.2024 22:07:08.454] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.10\523aa0cd9a773b2b56268d8689b2fb5c1f072941\fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
-[11dic.2024 22:07:08.588] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
-[11dic.2024 22:07:10.126] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[11dic.2024 22:07:10.133] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Usuario\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, cassowary_mod_1, --all, --output, C:\Andrés\Backup\CwMod_1.20.1-master\src\generated\resources, --existing, C:\Andrés\Backup\CwMod_1.20.1-master\src\main\resources]
-[11dic.2024 22:07:10.571] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
-[11dic.2024 22:07:10.572] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
-[11dic.2024 22:07:10.574] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
-[11dic.2024 22:07:10.881] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [cassowary_mod_1]
-[11dic.2024 22:07:14.675] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
-[11dic.2024 22:07:14.678] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
-[11dic.2024 22:07:14.730] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
-[11dic.2024 22:07:15.117] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Usuario/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[11dic.2024 22:07:15.117] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Usuario/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[11dic.2024 22:07:15.260] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[11dic.2024 22:07:15.304] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 43 ms
-[11dic.2024 22:07:15.304] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[11dic.2024 22:07:15.355] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 50 ms
-[11dic.2024 22:07:15.356] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: cassowary_mod_1
-[11dic.2024 22:07:15.528] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: cassowary_mod_1 finished after 172 ms
-[11dic.2024 22:07:15.528] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: cassowary_mod_1
-[11dic.2024 22:07:15.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: cassowary_mod_1 finished after 5 ms
-[11dic.2024 22:07:15.533] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id cassowary_mod_1
-[11dic.2024 22:07:15.545] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id cassowary_mod_1 finished after 11 ms
-[11dic.2024 22:07:15.545] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id cassowary_mod_1
-[11dic.2024 22:07:15.546] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id cassowary_mod_1 finished after 0 ms
-[11dic.2024 22:07:15.546] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[11dic.2024 22:07:15.561] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 15 ms
-[11dic.2024 22:07:15.561] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 302 ms
-[11dic.2024 22:07:15.572] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 88, old count: 88, new count: 89, removed stale: 0, written: 0
+[12dic.2024 15:15:08.813] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Usuario\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.10, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, cassowary_mod_1, --all, --output, C:\Andrés\Backup\CwMod_1.20.1-master\src\generated\resources, --existing, C:\Andrés\Backup\CwMod_1.20.1-master\src\main\resources]
+[12dic.2024 15:15:08.816] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.12 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[12dic.2024 15:15:08.929] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[12dic.2024 15:15:08.973] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Usuario/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[12dic.2024 15:15:09.237] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.10\7a15037366722893d76a3d0b2e9d1fd13a63a22d\javafmllanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12dic.2024 15:15:09.241] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.10\e67d9b3451d64ccc812cbbd33c066bd3ebbf2167\lowcodelanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12dic.2024 15:15:09.244] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.10\2023f9726a509c5ba5a925cac934944066093de8\mclanguage-1.20.1-47.3.10.jar is missing mods.toml file
+[12dic.2024 15:15:09.247] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.10\523aa0cd9a773b2b56268d8689b2fb5c1f072941\fmlcore-1.20.1-47.3.10.jar is missing mods.toml file
+[12dic.2024 15:15:09.372] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[12dic.2024 15:15:10.518] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[12dic.2024 15:15:10.525] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Usuario\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, cassowary_mod_1, --all, --output, C:\Andrés\Backup\CwMod_1.20.1-master\src\generated\resources, --existing, C:\Andrés\Backup\CwMod_1.20.1-master\src\main\resources]
+[12dic.2024 15:15:10.814] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
+[12dic.2024 15:15:10.815] [main/INFO] [mixin/]: Remapping refMap terrablender.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
+[12dic.2024 15:15:10.817] [main/INFO] [mixin/]: Remapping refMap geckolib.refmap.json using C:\Andrés\Backup\CwMod_1.20.1-master\build\createSrgToMcp\output.srg
+[12dic.2024 15:15:11.098] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [cassowary_mod_1]
+[12dic.2024 15:15:15.022] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.10, for MC 1.20.1 with MCP 20230612.114412
+[12dic.2024 15:15:15.026] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.10 Initialized
+[12dic.2024 15:15:15.072] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
+[12dic.2024 15:15:15.436] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Usuario/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[12dic.2024 15:15:15.437] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Usuario/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.10_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[12dic.2024 15:15:15.599] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[12dic.2024 15:15:15.631] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 31 ms
+[12dic.2024 15:15:15.631] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[12dic.2024 15:15:15.669] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 37 ms
+[12dic.2024 15:15:15.669] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: cassowary_mod_1
+[12dic.2024 15:15:15.826] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: cassowary_mod_1 finished after 156 ms
+[12dic.2024 15:15:15.826] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: cassowary_mod_1
+[12dic.2024 15:15:15.831] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: cassowary_mod_1 finished after 4 ms
+[12dic.2024 15:15:15.831] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id cassowary_mod_1
+[12dic.2024 15:15:15.842] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id cassowary_mod_1 finished after 10 ms
+[12dic.2024 15:15:15.842] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id cassowary_mod_1
+[12dic.2024 15:15:15.843] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id cassowary_mod_1 finished after 0 ms
+[12dic.2024 15:15:15.843] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[12dic.2024 15:15:15.858] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 14 ms
+[12dic.2024 15:15:15.858] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 258 ms
+[12dic.2024 15:15:15.868] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 88, old count: 88, new count: 89, removed stale: 0, written: 0
