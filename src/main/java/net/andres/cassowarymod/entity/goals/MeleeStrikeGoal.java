@@ -71,7 +71,7 @@ public class MeleeStrikeGoal extends ReachTargetGoal {
         if (target != null) {
             double distToTargetSqr = this.mob.distanceToSqr(target);
 
-            // Move to target
+            // Move to target // Cambio Diplocaulus
             if (!isAttacking() && getAttackReachSqr(target) < distToTargetSqr) {
                 super.tick();
             }

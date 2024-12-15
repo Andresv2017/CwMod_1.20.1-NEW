@@ -20,8 +20,8 @@ public class DiplocaulusEntity extends AnimatedTCreature {
         return TamableAnimal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 16D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
-                .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.2f)
+                .add(Attributes.ATTACK_SPEED, 0.1f)
+                .add(Attributes.MOVEMENT_SPEED, 2.0f)
                 .build();
     }
 
@@ -32,7 +32,7 @@ public class DiplocaulusEntity extends AnimatedTCreature {
         super(pEntityType, pLevel);
         this.setTextureId(this.random.nextInt(2));
         this.goalSelector.addGoal(1, new FloatGoal((this)));
-        this.goalSelector.addGoal(2, new MeleeStrikeGoal(this, baseAttackDuration, baseAttackActionPoint, 2, 1.0, true));
+        this.goalSelector.addGoal(2, new MeleeStrikeGoal(this, baseAttackDuration, baseAttackActionPoint, 15, 1.5, true));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));//Que las entidades se acerquen para procrear
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.25D, Ingredient.of(Items.TROPICAL_FISH), false)); //Siga cuando tienes el obejto en tu mano
         this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1.0)); // Se mueve por el mundo
